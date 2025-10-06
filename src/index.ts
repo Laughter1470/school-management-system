@@ -1,8 +1,7 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
@@ -13,15 +12,11 @@ app.use(cors());
 app.use(express.json());
 
 // Basic route
-app.get('/', (req, res) => {
-  res.json({ message: 'School Management System Backend' });
+app.get('/', (req: Request, res: Response) => {
+  res.send('School Management System API is running 🚀');
 });
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-<<<<<<< HEAD
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
-=======
-}); // Added missing semicolon here
->>>>>>> 07854683804d22caaf68cedc8303951e14e0965f

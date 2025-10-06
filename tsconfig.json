@@ -1,17 +1,4 @@
 {
-<<<<<<< HEAD
-    "compilerOptions": {
-      "target": "ES2020",
-      "module": "commonjs",
-      "outDir": "./dist",
-      "rootDir": "./src",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
-    }
-  }
-=======
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
@@ -29,4 +16,3 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
->>>>>>> 07854683804d22caaf68cedc8303951e14e0965f
