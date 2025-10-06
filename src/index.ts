@@ -20,4 +20,8 @@ app.get('/', (req, res) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+<<<<<<< HEAD
 });
+=======
+}); // Added missing semicolon here
+>>>>>>> 07854683804d22caaf68cedc8303951e14e0965f
