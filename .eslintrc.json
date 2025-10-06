@@ -1,32 +1,24 @@
 {
-  "env": {
-    "node": true
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "commonjs"
-  },
-  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "indent": ["error", 2],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
-  "overrides": [
-    {
-      "files": ["*.json"],
-      "parser": "jsonc-eslint-parser",
-      "extends": ["plugin:jsonc/recommended-with-json"],
-      "rules": {
-        "jsonc/auto": "error"
-      }
-    }
-  ]
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "ignorePatterns": ["*.json", "dist", "node_modules"]
 }
