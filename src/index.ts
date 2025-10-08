@@ -30,10 +30,17 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   try {
     const { data, error } = await supabase.from('students').select('*');
-    if (error) throw error;
+    if (error) {
+      console.error('Supabase error:', error);
+      throw error;
+    }
     res.json(data);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch students' });
+  } catch (error: any) {
+    console.error('Error fetching students:', error);
+    res.status(500).json({
+      error: 'Failed to fetch students',
+      details: error.message || 'Unknown error',
+    });
   }
 });
 
